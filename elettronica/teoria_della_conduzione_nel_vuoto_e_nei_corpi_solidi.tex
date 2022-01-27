@@ -1,0 +1,86 @@
+\chapter{Teoria della conduzione nel vuoto e nei corpi solidi}
+
+\section{Conduzione elettrica nei metalli}
+
+Corrente elettronica di densità:
+
+\begin{equation}
+  J = n \cdot e \cdot u \mathrlap{\qquad \left(\si{\watt\per\meter\squared}\right)}
+\end{equation}
+
+\begin{conditions}
+  e & carica dell'elettrone, espressa in coulomb \\
+  n & numero degli elettroni liberi per $m^3$ \\
+  u & velocità degli elettroni in $m/sec$
+\end{conditions}
+
+Conviene introdurre la \textit{mobilità} $\mu$ delle cariche libere
+
+\begin{equation}
+  \mu = \frac{u}{E} \units{\frac{\metre\squared}{\coulomb \, \Omega}}
+\end{equation}
+
+infatti dimensionalmente è:
+
+\begin{equation}
+  [\mu] = \frac{[u]}{[E]} = \frac{\si[]{\metre}}{\si[]{\sec}} \cdot \frac{1}{\si[]{V/\metre}}
+  = \frac{\si[]{\metre\squared}}{\si[]{\sec\ohm \cdot \ampere}}
+  = \frac{\si[]{\metre\squared}}{\si[]{\ohm \cdot \coulomb}}
+\end{equation}
+
+la \textit{mobilità} è una costante caratteristica del conduttore.
+E sostituendo si ha:
+
+\begin{equation}
+  J = n \mu e E \units{\ampere/\metre\squared}
+\end{equation}
+
+\paragraph{Conduttività intrinseca}
+
+\begin{equation}
+  \sigma = \frac{J}{E} = n \mu e \units{\ohm^{-1} \, \metre^{-1}}
+\end{equation}
+
+\paragraph{Resistività intrinseca}
+
+\begin{equation}
+  \rho = \frac{1}{\sigma} = \inverse{n \mu e} \units{\ohm \, \metre}
+\end{equation}
+
+\section{Livelli di energia}
+
+\paragraph{Relazione di \textit{Richardson-Dushman}}
+
+\begin{equation}
+  J_s = A T^2 e^{-b/t} \units{\ampere cm}
+\end{equation}
+
+\begin{conditions}
+  J_s & densità di corrente \\
+  A & constante dei metalli ($120,4 \units{\ampere / cm^2 \, \kelvin^2}$) \\
+  T & temperatura in gradi Kelvin ($\si{^{\circ}\kelvin}$) \\
+  b & costante caratteristica del materiale uguale al rapporto fra
+  il suo lavoro di estrazione e la costante di \textit{Boltzmann}
+\end{conditions}
+
+\section{Corrente elettronica nel vuoto}
+
+\paragraph{Lavoro di un elettrone}
+
+\begin{equation}
+  eV = \frac{1}{2} m u^2
+\end{equation}
+
+\begin{conditions}
+  V & differenza di potenziale \\
+  u & velocità finale dell'elettrone \\
+  m & massa dell'elettrone $(9,1 \cdot 10^{-31} \si{\kilogram})$ \\
+  e & carica elettrica negativa di un elettrone $(1,6 \cdot 10^{-19} \si{\coulomb})$
+\end{conditions}
+
+si ha che:
+
+\begin{equation}
+  u = \sqrt{\frac{2 eV}{m}} = 594 \cdot 10^3 \sqrt{V} \units{\metre/\sec}
+\end{equation}
+

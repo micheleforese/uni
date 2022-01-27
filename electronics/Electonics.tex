@@ -1,0 +1,293 @@
+\documentclass[12pt,titlepage,a4paper]{book}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usepackage[thinc]{esdiff}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{gensymb}
+\usepackage{bm}
+\usepackage{fullpage}
+
+\usepackage{tikz,tikz-3dplot}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[thinc]{esdiff}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{textcomp,gensymb}
+\usepackage{bm}
+\usepackage{calc}
+
+\usepackage{physics}
+\usepackage{adjustbox}
+\usepackage{balance}
+\usepackage{pgfplots}
+\usepackage{subfiles}
+\usepackage{graphicx}
+
+\usepackage{url}
+
+\usepackage{siunitx}
+\DeclareSIUnit\px{px}
+
+\usepackage{pst-optic, pst-optexp}
+
+
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\der}[3][]{\frac{d^{#1} #2}{d #3^{#1}}}
+\newcommand{\dder}[3][]{\frac{\partial{d}^{#1} #2}{\partial{d} #3^{#1} }}
+\newcommand{\uvec}[1]{\hat{#1}}
+
+\newcommand{\cvec}[2]{#1\uvec{#2}}
+\newcommand{\veccomp}[4][]{\cvec{#2}{i^{#1}} + \cvec{#3}{j^{#1}} + \cvec{#4}{k^{#1}}}
+
+\newcommand{\phasor}[1]{\mathbf{#1}}
+%%%%%%%%%%%%%%%%%%%%
+
+
+\pgfplotsset{compat = newest}
+
+
+\title{Cheat Sheet}
+\author{Michele Forese\\
+  \small{\texttt{michele.forese.personal@gmail.com}}
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% -- Bibliography (APA style)
+\bibliography{references}
+
+\pagebreak
+
+\section{Potenza in regine Sinusoidale}
+\subsection{Potenza Istantatnea e potenza media}
+
+
+$$ v(t) = V_m cos(\omega t + \theta_v) $$
+$$ i(t) = I_m cos(\omega t + \theta_i) $$
+
+La potenza istantanea è:
+
+\begin{equation*}
+  p(t) = V_m cos(\omega t + \theta_v) I_m cos(\omega t + \theta_i) [\SI{}{\watt}]
+\end{equation*}
+
+Applicando le formule di Werner della trigonometria,
+$$ cos(A)cos(B) = \frac{1}{2} [cos(A - B) + cos(A + B)] $$
+
+Possiamo riscrivere la formula:
+
+$$ p(t)=\frac{1}{2}V_mI_mcos(\theta_v - \theta_i) + \frac{1}{2}V_mI_mcos(2 \omega t + \theta_v + \theta_i) $$
+
+\paragraph{Potenza Attiva}
+
+$$ P = \frac{1}{2} V_m I_m cos(\theta_v - \theta_i) $$
+
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+        domain = 0:10,
+      ]
+      \addplot[
+        samples = 200,
+        smooth,
+        thick,
+        blue,
+      ]{ 0.5 * cos(deg(20)) + (1/2) * cos(deg(2 * x + 90))};
+      \addplot[
+        red,
+        thin,
+        dashed
+      ]{0.5 * cos(deg(20))};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+Ampiezza oscillazione: $ A = \frac{1}{2} V_m I_m $
+
+Picco massimo: $ P_{max} = P + \frac{1}{2} V_m I_m $
+
+Media Potenza in $ T = \frac{2 \pi}{\theta} $
+
+\begin{equation*}
+  \begin{split}
+    P_{avg} & = \frac{1}{T} \int_{0}^{T} p(t) dt \\
+    & = \frac{1}{T} \int_{0}^{T} \frac{1}{2} V_m I_m cos(\theta_v - \theta_i) dt +
+    \frac{1}{T} \int_{0}^{T} \frac{1}{2}V_mI_mcos(2 \omega t + \theta_v + \theta_i) dt = \\
+    & = \frac{1}{2} V_m I_m cos(\theta_v - \theta_i) + 0 = P
+  \end{split}
+\end{equation*}
+
+Potenza Attiva:
+
+Valore medio di un periodo della potenza instantanea $p(t)$
+
+Energia assorbita:
+
+\begin{equation*}
+  w = \int_{0}^{\Delta t} p(t) dt = P \Delta t + \int_{0}^{\Delta t} \frac{1}{2} V_m I_m cos(2 \omega t + \theta_v + \theta_i) dt
+\end{equation*}
+
+\subsubsection{Resistore}
+
+\begin{equation*}
+  i(t) = I_m cos(\omega t + \theta_i) \\
+  v(t) = Ri(t) = R I_m cos(\omega t + \theta_i)
+\end{equation*}
+
+Dunque: $\theta_v = \theta_i \Rightarrow cos(\theta_v - \theta_i) = 1$
+
+$$ V_m = R I_m $$
+
+\begin{equation*}
+  p(t) = \frac{1}{2}V_mI_mcos(\theta_v - \theta_i) + \frac{1}{2}V_mI_mcos(2 \omega t + \theta_v + \theta_i)
+\end{equation*}
+
+Diventa:
+
+\begin{equation*}
+  p(t) = \frac{1}{2} R {I_m}^2 + \frac{1}{2} R {I_m}^2 cos(2 \omega t + 2 \theta_i)
+\end{equation*}
+
+\begin{list}{-}{La potenza istantanea}
+  \item è sempre non negativa
+  \item sia annulla con periodo $ \frac{T}{2}$
+\end{list}
+
+Potenza media:
+
+\begin{equation*}
+  P = \frac{1}{2} V_m I_m = \frac{1}{2} R {I_m}^2 = \frac{1}{2} \frac{{V_m}^2}{R}
+\end{equation*}
+
+Potenza di Picco (max):
+
+\begin{equation*}
+  P_{max} = R {I_m}^2 = \frac{{V_m}^2}{R}
+\end{equation*}
+
+\subsubsection{Induttore}
+
+
+\begin{equation*}
+  \begin{split}
+    i(t) &= I_m cos(\omega t + \theta_i) \\
+    v(t) &= L \diff{i}{t} = - \omega L I_m sen(\omega t + \theta_i) = \\
+    &= \omega L I_m cos(\omega t + \theta_i + 90\degree)
+  \end{split}
+\end{equation*}
+
+
+Dunque:
+
+$$\theta_v = \theta_i + 90\degree \Rightarrow cos(\theta_v - \theta_i) = 0$$
+$$ V_m = \omega L I_m $$
+
+\begin{equation*}
+  p(t) = - \frac{1}{2} \omega L {I_m}^2 sen(\theta_v - \theta_i) + \frac{1}{2}V_mI_mcos(2 \omega t + \theta_v + \theta_i)
+\end{equation*}
+
+Diventa:
+
+\begin{equation*}
+  p(t) = - \frac{1}{2} \omega L {I_m}^2 sen(2 \omega t + 2 \theta_i)
+\end{equation*}
+
+\begin{list}{-}{La potenza istantanea}
+  \item sia annulla con periodo $ \frac{T}{4}$
+  \item Assorbe energia in un intervallo di tempo pari a $\frac{T}{4} (p(t) > 0)$ e
+        la restituisce nel quarto di periodo successivo
+\end{list}
+
+Potenza media:
+
+\begin{equation*}
+  P = 0
+\end{equation*}
+
+Potenza di Picco (max):
+
+\begin{equation*}
+  P_{max} = \frac{1}{2} \omega L {I_m}^2
+\end{equation*}
+
+
+\subsubsection{Condensatore}
+
+
+\begin{equation*}
+  \begin{split}
+    v(t) &= V_m cos(\omega t + \theta_v) \\
+    i(t) &= C \diff{v}{t} = - \omega C V_m sen(\omega t + \theta_v) = \\
+    &= \omega C V_m cos(\omega t + \theta_v + 90\degree)
+  \end{split}
+\end{equation*}
+
+
+Dunque:
+
+$$\theta_v = \theta_i + 90\degree \Rightarrow cos(\theta_v - \theta_i) = 0$$
+$$ I_m = \omega C V_m $$
+
+
+Diventa:
+
+\begin{equation*}
+  p(t) = \frac{1}{2} \omega C {V_m}^2 sen(2 \omega t + 2 \theta_i)
+\end{equation*}
+
+\begin{list}{-}{La potenza istantanea}
+  \item sia annulla con periodo $ \frac{T}{4}$
+  \item Assorbe energia in un intervallo di tempo pari a $\frac{T}{4} (p(t) > 0)$ e
+        la restituisce nel quarto di periodo successivo
+\end{list}
+
+Potenza media:
+
+\begin{equation*}
+  P = 0
+\end{equation*}
+
+Potenza di Picco (max):
+
+\begin{equation*}
+  P_{max} = \frac{1}{2} \omega C {V_m}^2
+\end{equation*}
+
+\subsection{Valore Efficace}
+
+$$ I_{eff} = \frac{I_m}{\sqrt{2}} $$
+
+Il valore efficace di una corrente sinusoidale è il valore di quella tensione costante che,
+scorrendo nello stesso resistore, provoca la dissipazione della stessa potenza media
+
+$$ V_{eff} = \frac{V_m}{\sqrt{2}} $$
+
+Il valore efficace di una tensione sinusoidale è il valore di quella tensione costante che,
+ai capi dello stesso resistore, provoca la dissipazione della stessa potenza media
+
+Legge di Ohm per i valori efficaci:
+
+$$ V_{eff} = R I_{eff} $$
+
+\begin{equation}
+  I_{eff} = \sqrt{\frac{1}{T} \int_{0}^{T} i^2(t) dt}
+\end{equation}
+
+\subsection{Potenza complessa}
+
+\begin{equation}
+  \pmb{S} = \frac{1}{2} \pmb{V} \pmb{I^{*}}
+\end{equation}
+
+
+\subfile{./electronics/trasformatore.tex}
+
+\end{document}

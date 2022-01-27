@@ -1,0 +1,239 @@
+\chapter{Moto Circolare}
+
+\section{Sistema di riferimento rototraslatorio}
+
+Vettori che descrivono il punto il vettore da $O \equiv \Omega$ a $P$:
+
+\begin{align*}
+  \vec{r}  & = x\uvec{i} + y\uvec{j} + z\uvec{k}       \\
+  \vec{r'} & = x'\uvec{i'} + y'\uvec{j'} + z'\uvec{k'}
+\end{align*}
+
+Vettori che descrivono la velocità:
+
+\begin{align*}
+  \vec{v}  & = \der{x}{t}\uvec{i} + \der{y}{t}\uvec{j} + \der{z}{t}\uvec{k}       \\
+  \vec{v'} & = \der{x'}{t}\uvec{i'} + \der{y'}{t}\uvec{j'} + \der{z'}{t}\uvec{k'}
+\end{align*}
+
+Vettori che descrivono l'accelerazione:
+
+\begin{align*}
+  \vec{a}  & = \der[2]{x}{t}\uvec{i} + \der[2]{y}{t}\uvec{j} + \der[2]{z}{t}\uvec{k}       \\
+  \vec{a'} & = \der[2]{x'}{t}\uvec{i'} + \der[2]{y'}{t}\uvec{j'} + \der[2]{z'}{t}\uvec{k'}
+\end{align*}
+
+il vettore si compone cosi:
+
+\begin{equation}
+  \vec{r} = \vec{r_0} + \vec{r'}
+\end{equation}
+
+Ma siccome il piano movente non trasla ($\vec{r_0} = 0$), allora scriveremo:
+
+$$ \vec{r} = \vec{r'} $$
+
+e di conseguenza:
+
+\begin{equation}
+  x\uvec{i} + y\uvec{j} + z\uvec{k} = x'\uvec{i'} + y'\uvec{j'} + z'\uvec{k'}
+\end{equation}
+
+
+\subsection{la velocità rispetto ai sistemi relativi}
+
+Derivando entrambi i membri troviamo:
+
+\begin{equation}
+  \begin{split}\label{eq:der_r}
+    \der{}{t} (x\uvec{i} + y\uvec{j} + z\uvec{k})
+    & = \der{x}{t}\uvec{i} + x\der{\uvec{i}}{t} + \der{y}{t}\uvec{j} + y\der{\uvec{j}}{t} + \der{z}{t}\uvec{k} + z\der{\uvec{k}}{t} = \\
+    & = \der{x}{t}\uvec{i} + \der{y}{t}\uvec{j} +  \der{z}{t}\uvec{k} +
+    x\der{\uvec{i}}{t} + y\der{\uvec{j}}{t} + z\der{\uvec{k}}{t}
+  \end{split}
+\end{equation}
+
+\begin{equation}
+  \begin{split}\label{eq:der_r_primo}
+    \der{}{t} (x'\uvec{i'} + y'\uvec{j'} + z'\uvec{k'})
+    & = \der{x'}{t}\uvec{i'} + x'\der{\uvec{i'}}{t} + \der{y'}{t}\uvec{j'} + y'\der{\uvec{j'}}{t} + \der{z'}{t}\uvec{k'} + z'\der{\uvec{k'}}{t} = \\
+    & = \der{x'}{t}\uvec{i'} + \der{y'}{t}\uvec{j'} +  \der{z'}{t}\uvec{k'} +
+    x'\der{\uvec{i'}}{t} + y'\der{\uvec{j'}}{t} + z'\der{\uvec{k'}}{t}
+  \end{split}
+\end{equation}
+
+\paragraph{Soffermiamoci sull'equazione \refeq{eq:der_r}}
+
+I primi 3 membri dell'equazione sono:
+
+\begin{align*}
+  \der{x}{t}\uvec{i} + \der{y}{t}\uvec{j} +  \der{z}{t}\uvec{k} = \vec{v}
+\end{align*}
+
+Per esaminare gli ultimi 3 membri dobbiamo prima definire la derivata di un versore:
+
+\begin{equation}
+  \der{\uvec{i}}{t} = \vec{w} \crossproduct \uvec{i}
+\end{equation}
+
+Possiamo riscrivere i versori in questo modo:
+
+\begin{align*}
+  \der{\uvec{i}}{t} & = \vec{w} \crossproduct \uvec{i} \\
+  \der{\uvec{j}}{t} & = \vec{w} \crossproduct \uvec{j} \\
+  \der{\uvec{k}}{t} & = \vec{w} \crossproduct \uvec{k}
+\end{align*}
+
+Di conseguenza:
+
+\begin{equation}
+  \begin{split}
+    x\der{\uvec{i}}{t} + y\der{\uvec{j}}{t} + z\der{\uvec{k}}{t}
+    & = x \vec{w} \crossproduct \uvec{i'} +
+    y \vec{w} \crossproduct \uvec{j'} +
+    z \vec{w} \crossproduct \uvec{k'} =              \\
+    & = \vec{w} \crossproduct (\veccomp{x}{y}{x}) = \\
+    & = \vec{w} \crossproduct \vec{r}
+  \end{split}
+\end{equation}
+
+Però siccome che il sistema di ferimento $\{ O,x,y,z\}$ non è in rotazione, il vettore
+$\vec{w}$ è nullo.
+
+Possiamo cosi riscrivere l'equazione \refeq{eq:der_r} in questo modo:
+
+\begin{equation}
+  \begin{split}
+    \der{}{t} (x\uvec{i} + y\uvec{j} + z\uvec{k})
+    &= \der{x}{t}\uvec{i} + \der{y}{t}\uvec{j} +  \der{z}{t}\uvec{k} = \\
+    &= \vec{v}
+  \end{split}
+\end{equation}
+
+\paragraph{Per quando riguarda l'equazione \refeq{eq:der_r_primo}}
+
+possiamo fare le medesime osservazioni:
+
+I primi 3 membri dell'equazione sono:
+
+\begin{align}
+  \der{x'}{t}\uvec{i'} + \der{y'}{t}\uvec{j'} + \der{z'}{t}\uvec{k'} = \vec{v'}
+\end{align}
+
+I restati 3 membri:
+
+\begin{equation}
+  \begin{split}
+    x'\der{\uvec{i'}}{t} + y'\der{\uvec{j'}}{t} + z'\der{\uvec{k'}}{t}
+    & = x' \vec{w} \crossproduct \uvec{i'} +
+    y' \vec{w} \crossproduct \uvec{j'} +
+    z '\vec{w} \crossproduct \uvec{k'} =              \\
+    & = \vec{w} \crossproduct (\veccomp[']{x'}{y'}{x'}) = \\
+    & = \vec{w} \crossproduct \vec{r'}
+  \end{split}
+\end{equation}
+
+Il che ci porta a dire, sostituendo con i risultati che abbiamo ottenuto:
+
+\begin{equation}
+  \begin{split} \label{eq:moti_relativi_velocity}
+    x\uvec{i} + y\uvec{j} + z\uvec{k} &= x'\uvec{i'} + y'\uvec{j'} + z'\uvec{k'} \\
+    \vec{v} &= \vec{v'} + \vec{w} \crossproduct \vec{r'}
+  \end{split}
+\end{equation}
+
+\subsection{L'accelerazione rispetto ai sistemi relativi}
+
+Derivando \refeq{eq:moti_relativi_velocity} otteniamo:
+
+\begin{align*}
+  \der{\vec{v}}{t}
+   & = \der{}{t} (\vec{v'} + \vec{w} \crossproduct \vec{r'}) =                                               \\
+   & = \der{\vec{v'}}{t} + \der{\vec{w}}{t} \crossproduct \vec{r'} + \vec{w} \crossproduct \der{\vec{r'}}{t}
+\end{align*}
+
+L'accelerazione è quindi definita in questo modo:
+
+\begin{equation}
+  \vec{a} = \der{\vec{v'}}{t} + \der{\vec{w}}{t} \crossproduct \vec{r'} + \vec{w} \crossproduct \der{\vec{r'}}{t}
+\end{equation}
+
+il termine $\der{\vec{r'}}{t}$ può essere scomposto:
+
+\begin{equation}
+  \der{\vec{r'}}{t} = \vec{v'} + \vec{w} \crossproduct \vec{r'}
+\end{equation}
+
+Per quando riguarda invece $\der{\vec{v'}}{t}$ la questione è più complessa:
+
+\begin{equation}
+  \begin{split}
+    \der{\vec{v'}}{t} &= \der{}{t} (\der{\vec{r'}}{t}) = \\
+    &= \der{}{t} (\der{x'}{t}\uvec{i'} + \der{y'}{t}\uvec{j'} + \der{z'}{t}\uvec{k'} +
+    x' \der{\uvec{i'}}{t} + y' \der{\uvec{j'}}{t} + z' \der{\uvec{k'}}{t}) = \\
+    &=
+    \der[2]{x'}{t} \uvec{i'} + \der{x'}{t} \der{\uvec{i'}}{t} +
+    \der[2]{y'}{t} \uvec{j'} + \der{y'}{t} \der{\uvec{j'}}{t} +
+    \der[2]{z'}{t} \uvec{k'} + \der{z'}{t} \der{\uvec{k'}}{t} + \\
+    &+ \der{x'}{t} \der{\uvec{i'}}{t} + x' \der[2]{\uvec{i'}}{t} +
+    \der{y'}{t} \der{\uvec{j'}}{t} + y' \der[2]{\uvec{j'}}{t} +
+    \der{z'}{t} \der{\uvec{k'}}{t} + z' \der[2]{\uvec{k'}}{t} = \\
+    &= \der[2]{x'}{t} \uvec{i'} + \der[2]{y'}{t} \uvec{j'} + \der[2]{z'}{t} \uvec{k'} +
+    \der{x'}{t} \der{\uvec{i'}}{t} + \der{y'}{t} \der{\uvec{j'}}{t} + \der{z'}{t} \der{\uvec{k'}}{t}
+  \end{split}
+\end{equation}
+
+\begin{equation}
+  \begin{split}
+    \der{\vec{v'}}{t} &= \vec{a'} +
+    \der{x'}{t} (\vec{w} \crossproduct \uvec{i'}) +
+    \der{y'}{t} (\vec{w} \crossproduct \uvec{j'}) +
+    \der{z'}{t} (\vec{w} \crossproduct \uvec{k'}) = \\
+    &= \vec{a'} + \vec{w} \crossproduct (
+    \der{x'}{t}\uvec{i'} + \der{y'}{t}\uvec{j'} + \der{z'}{t}\uvec{k'}
+    ) = \\
+    &= \vec{a'} + \vec{w} \crossproduct \vec{v'}
+  \end{split}
+\end{equation}
+
+Combinando le diverse equazioni troviamo che:
+
+\begin{equation}
+  \begin{split} \label{eq:moti_relativi_acceleration}
+    \vec{a} &= \vec{a'} +
+    \vec{w} \crossproduct \vec{v'} +
+    \vec{w} \crossproduct \vec{v'} +
+    \der{\vec{w}}{t} \crossproduct \vec{r'} +
+    \vec{w} \crossproduct \der{\vec{r'}}{t} = \\
+    &= \vec{a'} +
+    \vec{w} \crossproduct (\vec{w} \crossproduct \vec{r'}) + \der{\vec{w}}{t} \crossproduct \vec{r'} +
+    2 \vec{w} \crossproduct \vec{v'}
+  \end{split}
+\end{equation}
+
+\section{La Forza in relazione ai sistemi in movimento}
+
+Ora combiniamo la relazione \refeq{eq:moti_relativi_acceleration} con $ \vec{F} = m \vec{a} $:
+
+\begin{equation}
+  \begin{split}
+    m \vec{a} = m \vec{a'} +
+    m \left[ \vec{w} \crossproduct \left(\vec{w} \crossproduct \vec{r'}\right) + \der{\vec{w}}{t} \crossproduct \vec{r'}\right] +
+    2m \vec{w} \crossproduct \vec{v'} \\
+    m \vec{a'} = \vec{F} -
+    m \left[ \vec{w} \crossproduct \left(\vec{w} \crossproduct \vec{r'}\right) + \der{\vec{w}}{t} \crossproduct \vec{r'}\right]
+    - 2m \vec{w} \crossproduct \vec{v'}
+  \end{split}
+\end{equation}
+
+$$ \vec{w} \crossproduct \left(\vec{w} \crossproduct \vec{r'}\right) + \der{\vec{w}}{t} \crossproduct \vec{r'} = \vec{a_t}$$
+
+Il termine $- 2m \vec{w} \crossproduct \vec{v'}$ viene detto \textit{Forza di Coriolis} e
+si manifesta in presenza di un corpo in moto rispetto a un sistema di riferimento rotante.
+
+Nel caso più generale del moto rototraslatorio la seconda legge di Newton prende dunque la forma:
+
+\begin{equation}\label{eq:2nd_newton_law}
+  m \vec{a'} = \vec{F} - m \vec{a_t} - 2m \vec{w} \crossproduct \vec{v'}
+\end{equation}
+

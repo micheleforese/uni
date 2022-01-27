@@ -1,0 +1,49 @@
+
+\tdplotsetmaincoords{60}{-60}
+
+% VARIABLES
+\def\l{0.3} % length scale unit vector
+\def\rvec{1.2}
+\def\thetavec{30}
+\def\phivec{45}
+
+\colorlet{myblue}{blue!70!black}
+\colorlet{mydarkblue}{blue!50!black}
+\colorlet{veccol}{green!50!black}
+
+\tikzstyle{vector}        = [->,-stealth,red,very thick]
+\tikzstyle{vector guide}  = [dashed,red,thick]
+\tikzstyle{axis}          = [->,black,thick]
+
+\begin{tikzpicture}[scale=4,tdplot_main_coords]
+
+  % Axis
+  \coordinate (O) at (0,0,0);
+
+
+  \draw[axis] (0,0,0) -- (1,0,0) node[right=-2]{$x$};
+  \draw[axis] (0,0,0) -- (0,1,0) node[left=-1]{$y$};
+  \draw[axis] (0,0,0) -- (0,0,1) node[above right=-1]{$z$};
+
+  % Unit Vectors
+  \draw[vector] (0,0,0) -- (\l,0,0) node[above=3,left=-1,scale=0.8]{$\vu{x}$};
+  \draw[vector] (0,0,0) -- (0,\l,0) node[right=2,above=-1,scale=0.8]{$\vu{y}$};
+  \draw[vector] (0,0,0) -- (0,0,\l) node[left,scale=0.8]{$\vu{z}$};
+
+  % P point
+  \tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec}
+  % VECTORS
+  \draw[dashed,myblue] (O)  -- (Pxy);
+  \draw[dashed,mydarkblue] (P)  -- (Pxy);
+  \draw[dashed,mydarkblue] (P)  -- (Pz);
+  \draw[dashed,mydarkblue] (Py) -- (Pxy) -- (Px);
+
+  \node[circle,inner sep=0.9,fill=myblue]
+    (P') at ({\rvec*sin(\thetavec)*cos(\phivec)},{\rvec*sin(\thetavec)*sin(\phivec)},{\rvec*cos(\thetavec)}) {};
+  \draw[-stealth,thick,myblue] (O)  -- (P') node[above right=-2] {P};
+
+  % ARCS
+  \tdplotsetthetaplanecoords{\phivec}
+  \tdplotdrawarc[->,tdplot_rotated_coords]{(0,0,0)}{0.4}{0}{\thetavec}
+    {right=2,above}{$\theta$}
+\end{tikzpicture}

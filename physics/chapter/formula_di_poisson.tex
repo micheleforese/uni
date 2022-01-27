@@ -1,0 +1,68 @@
+\section{Formula di Poisson}
+
+\paragraph{Direzione e verso}
+
+Quando $\Delta t \rightarrow 0$ anche l'angolo $\Delta\phi \rightarrow 0$.
+In Questo limite $\alpha = \beta \rightarrow \frac{\pi}{2}$; quindi il vettore $\Delta\vec{a}$ tende
+ad essere ortogonale al vettore $\vec{a}$:
+
+\begin{equation}
+  \Delta \vec{a} \perp \vec{a} \\
+  \diff{\vec{a}}{t} \perp \vec{a}
+\end{equation}
+
+Quindi il vettore \input{figures/physics/etc/diff_vec_a_t.tex}
+ha direzione ortogonale a quella di $\vec{a}$
+e verso indicato dal senso di rotazione del vettore.
+
+\paragraph{Modulo}
+
+Calcoliamo li modulo del del vettore \input{figures/physics/etc/diff_vec_a_t.tex}
+
+\begin{equation}
+  \begin{split}
+    \absolutevalue{\diff{\vec{a}}{t}}
+    &= \lim_{\Delta t \to 0} \absolutevalue{\frac{\Delta \vec{a}}{\Delta t}}
+    = \lim_{\Delta t \to 0} \absolutevalue{\Delta \vec{a}} \\
+    \absolutevalue{\Delta \vec{a}} &= 2 \cdot a \cdot \sin(\frac{\Delta \phi}{2}) \\
+    \absolutevalue{\diff{\vec{a}}{t}} &= \lim_{\Delta t \to 0, \Delta\phi \to 0} {
+      \frac{2 \cdot a \cdot \sin(\frac{\Delta \phi}{2})}
+      {\Delta t}
+    } \\
+    &= a \cdot \lim_{\Delta t \to 0, \Delta\phi \to 0} {
+      2 \cdot
+      {
+        \frac{\sin(\frac{\Delta \phi}{2})}
+        {\frac{\Delta\phi}{2}}
+      }
+      \cdot \frac{\Delta\phi}{2}
+      \cdot \frac{1}{\Delta t}
+    } \\
+    &= a \cdot \lim_{\Delta\phi \to 0} {
+      \frac{\sin(\frac{\Delta \phi}{2})}
+      {\frac{\Delta\phi}{2}}
+    }
+    \cdot \lim_{\Delta t \to 0} {\frac{\Delta\phi}{\Delta t}}
+    = a \cdot \diff{\phi}{t}
+    = a \cdot w
+  \end{split}
+\end{equation}
+
+dove $w = \diff{\phi}{t}$ è il modulato della velocità angolare del vettore rotante.
+
+Possiamo riunire le relazioni ottenute in un'unica formula:
+
+\begin{equation}
+  \diff{\vec{a}}{t} = \vec{w} \crossproduct \vec{a} \qquad \text{se} \ \absolutevalue{\vec{a}} = cost.
+  \quad \text{(Formula di Poisson)}
+\end{equation}
+
+dove $\crossproduct$ indica un prodotto vettoriale ed il vettore $\vec{w} = \vec{w}(t)$ è cosi definito:
+
+\begin{description}
+  \item[direzione]: ortogonale al piano di rotazione istantanea di $\vec{a}$;
+  \item[verso]: tale che punti verso un osservatore che vede ruotare il vettore $\vec{a}$ in senso antiorario;
+  \item[modulo]: $w = \diff{\phi}{t}$ dove $\, \phi \,$ è l'angolo spazzato dal vettore durante la rotazione.
+\end{description}
+
+
