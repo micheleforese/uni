@@ -1,0 +1,110 @@
+\chapter{Diodi}
+
+\section{Diodo a giunzione}
+
+\begin{equation}
+  I_A = I_s \left(e^{\frac{e}{aKT} V_{AK}} - 1\right)
+\end{equation}
+
+dove:
+
+\begin{conditions}
+  I_s & corrente di saturazione inversa del diodo \\
+  e & carica dell'elettrone \\
+  T & temperatura assoluta in gradi Kelvin \\
+  K & costante di Boltzmann ($1,38 \cdot 10^{-23} \si[]{\joule/\kelvin}$)\\
+  a & coefficiente, (germanio $\cong$ 1, silicio $\cong$ 2)
+\end{conditions}
+
+Semplificando:
+
+\begin{equation}
+  \begin{split}
+    I_a \cong I_{s} e^{\frac{e}{aKT} V_{AK}} \\
+    m = \frac{e}{aKT} I_{A}
+  \end{split}
+\end{equation}
+
+\paragraph{Potenza dissipata}
+
+\begin{equation}
+  P_{d} = \frac{T_{j} - T_{a}}{\theta}
+\end{equation}
+
+\section{Diodo a punta di contatto}
+
+\section{Serie di un diodo con una resistenza e una f.e.m. continua}
+
+\begin{equation}
+  I_{A} = f(V_{AK})
+\end{equation}
+
+\begin{equation}
+  V_{AK} = E_{A} - R I_{A}
+\end{equation}
+
+\begin{equation}
+  I_{A} = \frac{E_{A} - V_{AK}}{R}
+\end{equation}
+
+\section{Diodo con in serie una resistenza e una f.e.m. alternata}
+
+Tensione ai capi della resistenza $R$
+
+\begin{equation}
+  V_{RM} = E_{M} - V_{S}
+\end{equation}
+
+Tensione Diodo
+
+\begin{equation}
+  v_{diodo} = e - R I_{A}
+\end{equation}
+
+Valore Massimo corrente
+
+\begin{equation}
+  I_{AM} = \frac{E_{M} - V_{AK}}{R}
+\end{equation}
+
+Valore medio della corrente $i_{A}$
+
+\begin{equation}
+  I_{m} = \frac{I_{AM}}{\pi}
+\end{equation}
+
+Valore medio $V_{Rm}$ della tensione ai capi della resistenza $R$
+
+\begin{equation}
+  V_{Rm} = \frac{V_{RM}}{\pi} = \frac{R_{M} - V_{S}}{\pi}
+\end{equation}
+
+\section{Diodo con in serie una resistenza, una f.e.m. continua e alternata}
+
+\begin{equation}
+  e = E_{M} \cos(\omega t)
+\end{equation}
+
+\subsection{$E_{M} < E_{A}$}
+
+\begin{equation}
+  i_{At} = I_{AO} + i_{A} = \frac{E_{A}}{R} + \frac{E_{M}}{R} \cos(\omega t)
+\end{equation}
+
+\subsection{$E_{M} > E_{A}$}
+
+\begin{equation}
+  E_{A} + E_{M} \cos(\theta) = 0
+\end{equation}
+
+si deduce che:
+
+\begin{equation}
+  \theta = \arccos(-\frac{E_{A}}{E_{M}})
+\end{equation}
+
+\paragraph{Angolo di circolazione}
+
+\begin{equation}
+  2 \theta = 2 \arccos(-\frac{E_{A}}{E_{M}})
+\end{equation}

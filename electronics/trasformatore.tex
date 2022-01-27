@@ -1,0 +1,137 @@
+\chapter{Trasformatori}
+
+\subsection{Autotrasformatore Ideale}
+
+\begin{equation}
+  \begin{split}
+    v_3 = N_1 \der{\varPhi}{t} \\
+    v_1 = N_2 \der{\varPhi}{t}
+  \end{split}
+\end{equation}
+
+quindi:
+
+\begin{equation}
+  v_3 = \frac{N_1}{N_2} v_1
+\end{equation}
+
+Per la LKT,
+
+\begin{equation}
+  v_2 = v_3 + v_1
+\end{equation}
+
+\begin{equation}
+  \boxed{
+    v_2 = \frac{N_1 + N_2}{N_2} v_1
+  }
+\end{equation}
+
+Applicando la legge di Ampere ad una linea chiuda concatenata con l'avvolgimento:
+
+\begin{equation}
+  i_3 = \frac{N_1}{N_2} i_2
+\end{equation}
+
+\begin{equation}
+  \boxed{i_2 = - \frac{N_2}{N_1 + N_2} i_1}
+\end{equation}
+
+\paragraph{rapporto spire}
+
+\begin{equation}
+  n = \frac{N_2}{N_1 + N_2}
+\end{equation}
+
+\paragraph{Abbassamento di tensione}
+
+\begin{align*}
+  v_2 = \frac{N_2}{N_1 + N_2} v_1
+   & i_2 = - \frac{N_1 + N_2}{N_2} i_2 \\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Induttori Accoppiati}
+
+\subsection{Analisi di circuiti con induttori accoppiati}
+
+\paragraph{Coefficiente di accoppiamento}
+
+\begin{equation}
+  k = \frac{M}{\sqrt{L_1 L_2}}
+\end{equation}
+
+\paragraph{Potenza Complessa}
+
+\begin{equation}
+  \begin{split}
+    \phasor{S} &= \frac{1}{2} \left(\phasor{V_1} \phasor{I_1^*} + \phasor{V_2} \phasor{I_2^*}\right) = \\
+    &= \frac{1}{2} jw L_1 I_1^2 + \frac{1}{2} jw L_2 I_2^2 + jw M I_1 I_2 \cos(\theta_1 - \theta_2)
+  \end{split}
+\end{equation}
+
+\paragraph{Regime Sinusoidale}
+
+\begin{equation}
+  \begin{split}
+    \phasor{V_1} &= j w L_1 \phasor{I_1} + j w M \phasor{I_2} \\
+    \phasor{V_2} &= j w M \phasor{I_1} + j w L_2 \phasor{I_2}
+  \end{split}
+\end{equation}
+
+
+In forma matriciale:
+
+\begin{equation}
+  \begin{bmatrix}
+    \phasor{V_1} \\
+    \phasor{V_2}
+  \end{bmatrix}
+  = jw
+  \begin{bmatrix}
+    L_1 & M   \\
+    M   & L_2
+  \end{bmatrix}
+  \begin{bmatrix}
+    \phasor{I_1} \\
+    \phasor{I_2}
+  \end{bmatrix}
+\end{equation}
+
+dove
+
+\begin{equation}
+  \phasor{L} =
+  \begin{bmatrix}
+    L_1 & M   \\
+    M   & L_2
+  \end{bmatrix}
+\end{equation}
+
+è detta \textbf{matrice delle induttanze}.
+
+Può essere anche invertita, fornendo l'espressione delle correnti din funzione delle tensioni:
+
+\begin{equation}
+  \begin{bmatrix}
+    \phasor{I_1} \\
+    \phasor{I_2}
+  \end{bmatrix}
+  = \frac{1}{jw \Delta}
+  \begin{bmatrix}
+    L_2 & -M  \\
+    -M  & L_1
+  \end{bmatrix}
+  \begin{bmatrix}
+    \phasor{V_1} \\
+    \phasor{V_2}
+  \end{bmatrix}
+\end{equation}
+
+$\Delta$ è il \textbf{determinante della matrice delle induttanze},
+
+\begin{equation}
+  \Delta = L_1 L_2 - M^2 = L_1 L_2 \left(1 - k^2\right)
+\end{equation}
+
+

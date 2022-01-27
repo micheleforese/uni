@@ -1,0 +1,92 @@
+\section{Derivata di un Versore}
+
+\begin{equation}
+  \Delta \vec{r} = \vec{r}(t + \Delta t) - r(t)
+\end{equation}
+
+con $\Delta t \rightarrow t$
+
+$$ \vec{r} = \abs*{r} \hat{u_r} $$
+
+\begin{equation}
+  \diff{\vec{r}}{t} = \diff{(\abs*{r} \hat{u_r})}{t} = \diff{r}{t} \hat{u_r} + r \diff{\hat{u_r}}{t}
+\end{equation}
+
+Derivata di un Versore:
+
+\begin{equation}
+  \begin{split}
+    \diff{(\vec{u} \cdot \vec{u})}{t} &= \diff{(\abs*{u} \abs*{u} \cos(\alpha))}{t} \\
+    & = \diff{(\abs*{u} \abs*{u})}{t} = 0
+  \end{split}
+\end{equation}
+
+con $\alpha = $ angolo tra $\vec{u}$ e $\vec{u}$ $(=0)$
+
+Ora calcoliamo la derivata con le regole di derivazione
+
+\begin{equation}
+  \diff{(\vec{u} \cdot \vec{u})}{t} = \diff{\vec{u}}{t} \cdot \hat{u} + \vec{u} \cdot \diff{\vec{u}}{t}
+  = 2 \vec{u} \cdot \diff{\vec{u}}{t}
+\end{equation}
+
+Ciao
+
+\begin{equation}
+  2 \vec{u} \cdot \diff{\vec{u}}{t} = 0
+\end{equation}
+
+Questo significa che
+
+\begin{equation}
+  \vec{u} \perp \diff{\vec{u}}{t}
+\end{equation}
+
+La derivata di un vettore è perpendicolare al vettore stesso.
+
+Questo ovviamente vale anche per i versori, che non sono altro che vettori unitari,
+
+Secondo le Formule di Poisson:
+
+\begin{equation}
+  \diff{\hat{u}}{t} = \vec{w} \crossproduct \hat{u} = w \, \hat{u_k} \crossproduct \hat{u}
+\end{equation}
+
+Il versore della velocità angolare $(\hat{u_k})$ deve per forza assumere questa posizione per l'equazione ()
+
+La velocità angolare è definita:
+
+\begin{equation}
+  \vec{w} = \dot{\theta} \, \hat{u_k}
+\end{equation}
+
+quindi:
+
+\begin{equation}
+  \diff{\hat{u}}{t} = \dot{\theta} \, \hat{u_k} \crossproduct \hat{u}
+\end{equation}
+
+Il versore della derivata dell'angolo $ \hat{u_{\theta}} =\hat{u_k} \crossproduct \hat{u} $
+ha lo stesso verso della derivata del versore
+
+\begin{equation}
+  \diff{\hat{u}}{t} \parallel \hat{u_{\theta}}
+\end{equation}
+
+Secondo l'equazione ()
+
+\begin{equation}
+  \diff{\vec{r}}{t} = \diff{r}{t}\hat{u_r} + r \diff{\hat{u_r}}{t} = \diff{r}{t}\hat{u_r} + r \diff{\theta}{t}\hat{u_{\theta}}
+\end{equation}
+
+$\dot{\vec{r}}$ è una misura di velocità, quindi i termini di () devono essere una somma di velocità.
+
+
+\begin{description}
+  \item [$\diff{r}{t} = v_r$]: è diretta esternamente
+  \item [$r \diff{\theta}{t} = v_{\theta}$]: Ha direzione Perpendicolare
+\end{description}
+
+\begin{equation}
+  \diff{\vec{r}}{t} = \vec{v_r} + \vec{v_{\theta}} = v_r \hat{u_r} + v_{\theta} \hat{u_{\theta}}
+\end{equation}

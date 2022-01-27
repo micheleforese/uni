@@ -1,0 +1,88 @@
+\chapter{Moto Piano Vettoriale}
+
+\section{Rappresentazione Polare della Velocità}
+
+La posizione di un punto nel piano può essere individuata utilizzando un sistema di coordinate diverse da quelle cartesiane
+, per esempio quelle polari.
+In particolare possiamo ottenere le rappresentazioni polari del vettore posizione e del vettore velocità in
+termini della coppia di coordinate polari $(r, \varphi)$ formata dal modulo del vettore $r$ e dell'angolo
+che quello forma con una direzione assegnata (in questo caso l'asse delle x).
+A tale scopo è necessario introdurre una nuova coppia di vettori ortogonali. che indicheremo rispettivamente
+con i simboli $\hat{r}$ e $\hat{\varphi}$ ottenuta ruotando la coppia di versioni $\hat{i}$ e $\hat{j}$
+dell'angolo $\varphi$.
+
+
+\begin{equation}
+  \begin{cases}
+    x = r \, cos(\varphi) \\
+    y = r \, sen(\varphi)
+  \end{cases}
+\end{equation}
+
+è Chiaro altresì che, a differenza della coppia di versori
+$\lbrace \hat{i}, \hat{j} \rbrace$, la coppia
+$\lbrace \hat{r}, \hat{\varphi} \rbrace$ non è costante nel
+tempo, bensì la sua orientazione varia al variare della posizione
+del punto durante il moto.
+Ricordiamoci questa formula (), decidiamo a scrivere il vettore tramite
+il prodotto del modulo e del versore ad esso associato.
+
+\begin{equation}
+  \vec{r} = r \cdot \hat{r}
+\end{equation}
+
+
+Nel caso particolare di un moto circolare sappiamo che il modulo
+$r$ rimane costante e pari al raggio della traiettoria,
+invertire in generale $r$ varierà nel tempo e la velocità
+$\vec{v}$ si otterrà derivando rispetto al tempo agli entrambi i membri
+
+
+\begin{equation}
+  \vec{v} = \vec{\dot{r}} = \dot{r} \, \hat{r} + r \, \dot{\hat{r}}
+\end{equation}
+
+\paragraph{Formula di Poisson}
+
+$$ \diff{u}{t} = \diff{s}{t} \hat{u_N}$$
+
+$$ \diff{s}{t} = \diff{(|\hat{u}| \theta)}{t} \hat{u_N} = |\hat{u}| \diff{\theta}{t} \hat{u_N} $$
+
+\begin{equation}
+  \diff{\hat{r}}{t} = \vec{w} \times \hat{r}
+  = \dot{\varphi} \, \hat{k} \times \hat{r}
+  = \dot{\varphi} \hat{\varphi}
+\end{equation}
+
+$ \hat{k} \times \hat{r} = \hat{\varphi} $ Significa ruotarlo di
+$90\degree$ e mi ritrovo $ \hat{\varphi}$
+
+
+\begin{figure}
+  \centering
+  \resizebox{.5\textwidth}{!}{\subfile{../figures/physics/polar_velocity.tikz}}
+  \caption{This is the Polar Representation of the unit vector}
+\end{figure}
+
+
+Rappresentazione Polare della velocità:
+\begin{equation}
+  \vec{v} =(\dot{r}) \, \hat{r}
+  + (r \, \dot{\varphi}) \, \hat{\varphi}
+\end{equation}
+
+\begin{list}{-}{Componenti:}
+  \item $(\dot{r})$ : Componente radiale $V_r$
+  \item $(r \, \dot{\varphi})$ : Componente azimutale $V_{\varphi}$
+\end{list}
+
+\paragraph{Rappresentazione intrinseca della velocità}
+
+$$ \vec{v} = \dot{s} \cdot \hat{\tau} $$
+
+\paragraph{Componenti polari della velocità}
+
+\begin{equation}
+  \vec{v} = \diff{\vec{r}}{t} = \diff{r}{t} \hat{u_r} + r \diff{\hat{u_r}}{t}
+  \rightarrow \vec{v} = \diff{r}{t} \hat{u_r} + r \diff{\theta}{t} \hat{u_{\theta}}
+\end{equation}
