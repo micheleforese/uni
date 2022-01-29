@@ -1,0 +1,56 @@
+\documentclass[12pt,titlepage,a4paper]{book}
+\usepackage{fullpage}
+
+\usepackage{tikz,tikz-3dplot}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[thinc]{esdiff}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{textcomp,gensymb}
+\usepackage{bm}
+\usepackage{calc}
+
+\usepackage{physics}
+\usepackage{adjustbox}
+\usepackage{balance}
+\usepackage{pgfplots}
+\usepackage{subfiles}
+\usepackage{graphicx}
+
+\usepackage{url}
+
+\usepackage{siunitx}
+\DeclareSIUnit\px{px}
+
+\usepackage{pst-optic, pst-optexp}
+
+
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\der}[3][]{\frac{d^{#1} #2}{d #3^{#1}}}
+\newcommand{\dder}[3][]{\frac{\partial{d}^{#1} #2}{\partial{d} #3^{#1} }}
+\newcommand{\uvec}[1]{\hat{#1}}
+
+\newcommand{\cvec}[2]{#1\uvec{#2}}
+\newcommand{\veccomp}[4][]{\cvec{#2}{i^{#1}} + \cvec{#3}{j^{#1}} + \cvec{#4}{k^{#1}}}
+%%%%%%%%%%%%%%%%%%%%
+
+
+
+\pgfplotsset{compat = newest}
+
+\title{Title}
+\author{
+  Michele Forese\\
+  \small{\texttt{michele.forese.personal@gmail.com}}
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subfile{./chapter/first.tex}
+
+
+\end{document}
